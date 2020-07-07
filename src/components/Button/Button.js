@@ -1,7 +1,7 @@
 import React from "react";
 
-export const Button = () => (
+export const Button = ({ children, ...props }) => (
   <div>
-    <input type="text" />
+    <button {...props}> {children}</button>
   </div>
 );
