@@ -21,6 +21,7 @@ const Search = styled.input`
   max-width: 600px;
   width: 100%;
   height: 25px;
+  margin-left: 15px;
 `;
 
 export const Topbar = () => (
