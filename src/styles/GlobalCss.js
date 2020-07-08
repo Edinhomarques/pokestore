@@ -22,11 +22,8 @@ export default createGlobalStyle`
     --primary: #36393f;
     --secondary: #f6bd20;
     --notification: #f84a4b;
-    --discord: #6e86d6;
+    --borderButton: #3B4CCA;
     --mention-detail: #f9a839;
-    --mention-message: #413f3f;
- 
-    --link: #5d80d6;
  
   }
 
