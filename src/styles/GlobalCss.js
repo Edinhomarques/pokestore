@@ -21,7 +21,6 @@ export default createGlobalStyle`
   :root {
     --primary: #36393f;
     --secondary: #f6bd20;
-    --notification: #f84a4b;
     --borderButton: #3B4CCA;
     --mention-detail: #f9a839;
  
