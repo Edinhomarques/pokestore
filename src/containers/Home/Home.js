@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Topbar } from "../../components/Topbar/Topbar";
 import Card from "../../components/Card/Card";
+import { Cart } from "../../components/Cart/Cart";
 import axios from "axios";
 import { GridContent, GridList, Next, Prev, Footer } from "./styles.js";
 
@@ -42,7 +43,7 @@ export default function Home() {
               ))
             : ""}
         </GridList>
-        <div>ok2</div>
+        <Cart></Cart>
       </GridContent>
       <Footer>
         <Prev onClick={handlePrevPage}>Voltar Pagina</Prev>
