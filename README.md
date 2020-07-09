@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## PokeStore
 Projeto proposto pela programa Hiring Coders da Gama Academy em Parceria com a Vtex
@@ -22,4 +22,4 @@ Projeto proposto pela programa Hiring Coders da Gama Academy em Parceria com a V
  - No diretorio clonado rode o comando `yarn` ou `npm install` para instalar as dependencias.
  - Depois so rodar o `npm start` ou `yarn start` e testar :)
  
- Link para produção: [deployment](https://pokestore-edsonmarques.netlify.app/)
+ Link para produção: [deployment](https://pokestore-edsonmarques.netlify.app/){:target="_blank"}
