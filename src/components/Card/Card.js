@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { ShoppingButton } from "../Button/TypeButton";
+import { AddShoppingButton } from "../Button/TypeButton";
 import PokeBall from "../../assets/pokeball.svg";
 import axios from "axios";
 
@@ -83,7 +83,7 @@ const CardPrice = styled.span`
   vertical-align: middle;
 `;
 
-const ShopButton = styled(ShoppingButton)`
+const ShopButton = styled(AddShoppingButton)`
   background-color: transparent;
   border: 1px solid var(--gray);
   padding: 8px;
