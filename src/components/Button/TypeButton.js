@@ -1,12 +1,7 @@
 import React from "react";
 import { Button } from "./Button";
-import {
-  FiSearch,
-  FiShoppingBag,
-  FiArrowLeft,
-  FiArrowRight,
-} from "react-icons/fi";
-
+import { FiSearch, FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { MdAddShoppingCart, MdShoppingCart } from "react-icons/md";
 export const SearchButton = ({ children, ...props }) => (
   <Button {...props}>
     <FiSearch />
@@ -14,9 +9,9 @@ export const SearchButton = ({ children, ...props }) => (
   </Button>
 );
 
-export const ShoppingButton = ({ children, ...props }) => (
+export const AddShoppingButton = ({ children, ...props }) => (
   <Button {...props}>
-    <FiShoppingBag />
+    <MdAddShoppingCart />
     {children}
   </Button>
 );
@@ -30,6 +25,13 @@ export const NextButton = ({ children, ...props }) => (
 export const BackButton = ({ children, ...props }) => (
   <Button {...props}>
     <FiArrowLeft />
+    {children}
+  </Button>
+);
+
+export const CompleteShopButton = ({ children, ...props }) => (
+  <Button {...props}>
+    <MdShoppingCart />
     {children}
   </Button>
 );
