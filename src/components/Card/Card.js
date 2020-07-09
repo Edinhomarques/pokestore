@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { AddShoppingButton } from "../Button/TypeButton";
 import PokeBall from "../../assets/pokeball.svg";
 import axios from "axios";
 
@@ -83,21 +82,11 @@ const CardPrice = styled.span`
   vertical-align: middle;
 `;
 
-const ShopButton = styled(AddShoppingButton)`
-  background-color: transparent;
-  border: 1px solid var(--gray);
-  padding: 8px;
-  border-radius: 25px;
-  font-size: 15px;
-  font-weight: bold;
-`;
-
-export default function Card({ pokemon }) {
+export default function Card({ pokemon, addItem }) {
   const [pokemonDetail, setPokemonDetail] = useState({});
   useEffect(() => {
     async function getDetailPokemon() {
       const response = await axios.get(`${pokemon.url}`);
-      console.log(response.data);
       setPokemonDetail(response.data);
     }
     getDetailPokemon();
@@ -114,7 +103,25 @@ export default function Card({ pokemon }) {
         <CardLoading src={PokeBall} alt={pokemon.name} />
       )}
       <FooterCard>
-        <ShopButton>Adicionar</ShopButton>
+        <button
+          style={{
+            border: "1px solid red",
+            height: " 35px",
+            zIndex: 9999,
+            width: "150px",
+            cursor: "pointer",
+            borderRadius: "25px",
+          }}
+          onClick={() =>
+            addItem({
+              name: pokemonDetail.name,
+              pokeImage: pokemonDetail.sprites.front_default,
+              price: pokemonDetail.base_experience,
+            })
+          }
+        >
+          Adicionar
+        </button>
         <CardPrice>R${pokemonDetail.base_experience}</CardPrice>
       </FooterCard>
     </CardBody>

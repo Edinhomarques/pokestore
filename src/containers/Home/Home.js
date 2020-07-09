@@ -9,9 +9,9 @@ export default function Home() {
   const [pokemons, setPokemons] = useState([]);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(12);
+  const [shoppingItems, setShoppingItems] = useState([]);
   useEffect(() => {
     async function fetchApi() {
-      console.log(limit, offset);
       const response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
       );
@@ -31,6 +31,10 @@ export default function Home() {
       setOffset(offset - 12);
     }
   }
+  function addItem(item) {
+    // console.log("item", item);
+    setShoppingItems([...shoppingItems, item]);
+  }
 
   return (
     <div>
@@ -39,11 +43,11 @@ export default function Home() {
         <GridList>
           {pokemons
             ? pokemons.map((pokemon, index) => (
-                <Card key={index} pokemon={pokemon} />
+                <Card key={index} pokemon={pokemon} addItem={addItem} />
               ))
             : ""}
         </GridList>
-        <Cart></Cart>
+        <Cart shoppingItems={shoppingItems} />
       </GridContent>
       <Footer>
         <Prev onClick={handlePrevPage}>Voltar Pagina</Prev>

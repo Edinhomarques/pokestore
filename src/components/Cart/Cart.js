@@ -84,116 +84,29 @@ const TotalPrice = styled.div`
   font-weight: bold;
 `;
 
-export const Cart = () => (
+export const Cart = ({ shoppingItems }) => (
   <CartContent>
+    {console.log(shoppingItems)}
     <CartHeader>
       <h1>Carrinho</h1>
     </CartHeader>
     <CartWrap>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
-      <CartItem>
-        <CartImg src={Poke} />
-        <CartName> NidoQuenn</CartName>
-        <CartName> R$ 250</CartName>
-      </CartItem>
+      {shoppingItems.map((poke, index) => (
+        <CartItem key={index}>
+          <CartImg src={poke.pokeImage} />
+          <CartName> {poke.name}</CartName>
+          <CartName> R$ {poke.price}</CartName>
+        </CartItem>
+      ))}
     </CartWrap>
     <CartFooter>
       <CartButtomFooter height="20px">Finalizar Comprar</CartButtomFooter>
-      <TotalPrice>R$ 5000mil</TotalPrice>
+      <TotalPrice>
+        R$
+        {shoppingItems
+          ? shoppingItems.reduce((acc, curr) => (acc += curr.price), 0)
+          : 0}
+      </TotalPrice>
     </CartFooter>
   </CartContent>
 );
